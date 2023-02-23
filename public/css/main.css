@@ -1,0 +1,67 @@
+._color-red {
+  color: red
+}
+
+p {
+  font-weight: 400;
+  font-style: normal;
+  white-space: normal;
+  font-size: 14px
+}
+
+.F9yp7e {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #202124;
+  line-height: 135%;
+  max-width: 100%;
+  min-width: 0%;
+}
+
+.RVEQke {
+  background-color: rgb(87 170 118);
+  color: rgba(0, 0, 0, 1);
+}
+
+.D8bnZd {
+  background-color: rgb(230, 242, 234);
+}
+
+.M7eMe {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: .2px;
+  line-height: 24px;
+  color: #202124;
+  font-weight: 400;
+}
+
+.nWQGrd {
+  
+width: 100%;
+  min-height: 24px;
+  padding: 0.5em 30px;
+}
+
+.c2gzEf {
+  margin-top: 25px;
+}
+
+.error {
+  color: red;
+  font-weight: 400;
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.border-error {
+  border-color: red;
+  
+}
+
+.blockquote{padding: .375rem .75rem;}
