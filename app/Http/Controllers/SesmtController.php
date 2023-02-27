@@ -3,6 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\QuizModel;
+use App\Models\Pergunta1Model;
+use App\Models\Pergunta2Model;
+use App\Models\Pergunta3Model;
+use App\Models\Pergunta4Model;
+use App\Models\Pergunta5Model;
+use App\Models\Pergunta6Model;
+use App\Models\Pergunta7Model;
 
 class SesmtController extends Controller
 {
@@ -30,7 +38,6 @@ class SesmtController extends Controller
      */
     public function store(Request $request)
     {
-
         // Form validation
         $this->validate($request, [
             'pergunta1' => 'required',
@@ -51,11 +58,57 @@ class SesmtController extends Controller
             'pergunta7.required' => 'Esta pergunta é obrigatória',
         ]);
 
-        //return redirect('/success');
-
-        var_dump($request->request);
-
-        dd($request->request);
+        //registrar quiz
+        $quiz = new QuizModel();
+        $quiz->usuario = "USER-QUIZ-SESMT-" . md5(time()); //gerar user automatico
+        $quiz->save();
+        $quiz_id = $quiz->id; //recuperar quiz_id
+        //registrar pergunta1
+        $Pergunta1 = new Pergunta1Model();
+        $Pergunta1->quiz_id = $quiz_id;
+        $Pergunta1->resposta = $this->get_dia_semana($request->pergunta1);
+        $Pergunta1->save();
+        //registrar pergunta2
+        $Pergunta2 = new Pergunta2Model();
+        $Pergunta2->quiz_id = $quiz_id;
+        $Pergunta2->resposta = $this->get_dia_semana($request->pergunta2);
+        $Pergunta2->save();
+        //percorres os dados vindos do formulario, e registrar pergunta3
+        foreach ($request->pergunta3 as $resposta) {
+            $Pergunta3 = new Pergunta3Model();
+            $Pergunta3->quiz_id = $quiz_id;
+            $Pergunta3->resposta = $this->get_problema($resposta);
+            $Pergunta3->save();
+        }
+        //percorres os dados vindos do formulario, e registrar pergunta4
+        foreach ($request->pergunta4 as $resposta) {
+            $Pergunta4 = new Pergunta4Model();
+            $Pergunta4->quiz_id = $quiz_id;
+            $Pergunta4->resposta = $this->get_problema($resposta);
+            $Pergunta4->save();
+        }
+        //percorres os dados vindos do formulario, e registrar pergunta5
+        foreach ($request->pergunta5 as $resposta) {
+            $Pergunta5 = new Pergunta5Model();
+            $Pergunta5->quiz_id = $quiz_id;
+            $Pergunta5->resposta = $this->get_problema($resposta);
+            $Pergunta5->save();
+        }
+        //percorres os dados vindos do formulario, e registrar pergunta6
+        foreach ($request->pergunta6 as $resposta) {
+            $Pergunta6 = new Pergunta6Model();
+            $Pergunta6->quiz_id = $quiz_id;
+            $Pergunta6->resposta = $this->get_problema($resposta);
+            $Pergunta6->save();
+        }
+        //percorres os dados vindos do formulario, e registrar pergunta7
+        foreach ($request->pergunta7 as $resposta) {
+            $Pergunta7 = new Pergunta7Model();
+            $Pergunta7->quiz_id = $quiz_id;
+            $Pergunta7->resposta = $this->get_problema($resposta);
+            $Pergunta7->save();
+        }
+        return redirect('/success');
     }
 
     /**
@@ -68,9 +121,6 @@ class SesmtController extends Controller
     {
         //
     }
-
-
-
 
     public function success()
     {
@@ -103,37 +153,37 @@ class SesmtController extends Controller
     {
         switch ($data) {
             case 1:
-                return 'pescoco';
+                return 'Pescoço';
                 break;
             case 2:
-                return 'ombros';
+                return 'Ombros';
                 break;
             case 3:
-                return 'cotovelos';
+                return 'Cotovelos';
                 break;
             case 4:
-                return 'antebracos';
+                return 'Antebraços';
                 break;
             case 5:
-                return 'punhos_maos_dedos';
+                return 'Punhos / Mãos / Dedos';
                 break;
             case 6:
-                return 'parte_superior_das_costas';
+                return 'Parte Superior das costas';
                 break;
             case 7:
-                return 'parte_Inferior_das_costas';
+                return 'Parte Inferior das costas';
                 break;
             case 8:
-                return 'quadril_coxas';
+                return 'Quadril / coxas';
                 break;
             case 9:
                 return 'Joelhos';
                 break;
             case 10:
-                return 'tornozelos_pes';
+                return 'Tornozelos / Pés';
                 break;
             case 11:
-                return 'cabeca';
+                return 'Cabeça';
                 break;
         }
     }
