@@ -5,7 +5,7 @@
   <div class="col-md-6 offset-md-3">
     <div class="card mb-4 text-center">
       <div class="card-body">
-        <img src="{{ asset('img/logo.png') }}" />
+        <img src="{{ asset('img/logo.png') }}" class="img-fluid" />
       </div>
   </div>
   

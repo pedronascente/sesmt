@@ -6,7 +6,7 @@
   <div class="col-md-6 offset-md-3">
          <div class="card mb-4 text-center">
     <div class="card-body">
-     <img src="{{ asset('img/logo.png') }}" />
+     <img src="{{ asset('img/logo.png') }}" class="img-fluid" />
     </div>
   </div>
   
@@ -147,7 +147,7 @@
       <blockquote class="blockquote mb-0">
         <p>Esta figura mostra como o corpo foi dividido, por si mesmo, qual parte está ou foi afetada, se houve alguma.</p>
         <footer class="text-center">
-         <img src="{{ asset('img/corpo-humano.jpg') }}" />
+         <img src="{{ asset('img/corpo-humano.jpg') }}"  class="img-fluid" />
         </footer>
       </blockquote>
     </div>

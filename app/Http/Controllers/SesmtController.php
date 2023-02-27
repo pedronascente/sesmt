@@ -21,16 +21,6 @@ class SesmtController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -63,50 +53,55 @@ class SesmtController extends Controller
         $quiz->usuario = "USER-QUIZ-SESMT-" . md5(time()); //gerar user automatico
         $quiz->save();
         $quiz_id = $quiz->id; //recuperar quiz_id
-        //registrar pergunta1
-        $Pergunta1 = new Pergunta1Model();
-        $Pergunta1->quiz_id = $quiz_id;
-        $Pergunta1->resposta = $this->get_dia_semana($request->pergunta1);
-        $Pergunta1->save();
-        //registrar pergunta2
-        $Pergunta2 = new Pergunta2Model();
-        $Pergunta2->quiz_id = $quiz_id;
-        $Pergunta2->resposta = $this->get_dia_semana($request->pergunta2);
-        $Pergunta2->save();
-        //percorres os dados vindos do formulario, e registrar pergunta3
-        foreach ($request->pergunta3 as $resposta) {
-            $Pergunta3 = new Pergunta3Model();
-            $Pergunta3->quiz_id = $quiz_id;
-            $Pergunta3->resposta = $this->get_problema($resposta);
-            $Pergunta3->save();
-        }
-        //percorres os dados vindos do formulario, e registrar pergunta4
-        foreach ($request->pergunta4 as $resposta) {
-            $Pergunta4 = new Pergunta4Model();
-            $Pergunta4->quiz_id = $quiz_id;
-            $Pergunta4->resposta = $this->get_problema($resposta);
-            $Pergunta4->save();
-        }
-        //percorres os dados vindos do formulario, e registrar pergunta5
-        foreach ($request->pergunta5 as $resposta) {
-            $Pergunta5 = new Pergunta5Model();
-            $Pergunta5->quiz_id = $quiz_id;
-            $Pergunta5->resposta = $this->get_problema($resposta);
-            $Pergunta5->save();
-        }
-        //percorres os dados vindos do formulario, e registrar pergunta6
-        foreach ($request->pergunta6 as $resposta) {
-            $Pergunta6 = new Pergunta6Model();
-            $Pergunta6->quiz_id = $quiz_id;
-            $Pergunta6->resposta = $this->get_problema($resposta);
-            $Pergunta6->save();
-        }
-        //percorres os dados vindos do formulario, e registrar pergunta7
-        foreach ($request->pergunta7 as $resposta) {
-            $Pergunta7 = new Pergunta7Model();
-            $Pergunta7->quiz_id = $quiz_id;
-            $Pergunta7->resposta = $this->get_problema($resposta);
-            $Pergunta7->save();
+
+        if ($quiz_id) {
+            //registrar pergunta1
+            $Pergunta1 = new Pergunta1Model();
+            $Pergunta1->quiz_id = $quiz_id;
+            $Pergunta1->resposta = $this->get_dia_semana($request->pergunta1);
+            $Pergunta1->save();
+            //registrar pergunta2
+            $Pergunta2 = new Pergunta2Model();
+            $Pergunta2->quiz_id = $quiz_id;
+            $Pergunta2->resposta = $this->get_dia_semana($request->pergunta2);
+            $Pergunta2->save();
+            //percorres os dados vindos do formulario, e registrar pergunta3
+            foreach ($request->pergunta3 as $resposta) {
+                $Pergunta3 = new Pergunta3Model();
+                $Pergunta3->quiz_id = $quiz_id;
+                $Pergunta3->resposta = $this->get_problema($resposta);
+                $Pergunta3->save();
+            }
+            //percorres os dados vindos do formulario, e registrar pergunta4
+            foreach ($request->pergunta4 as $resposta) {
+                $Pergunta4 = new Pergunta4Model();
+                $Pergunta4->quiz_id = $quiz_id;
+                $Pergunta4->resposta = $this->get_problema($resposta);
+                $Pergunta4->save();
+            }
+            //percorres os dados vindos do formulario, e registrar pergunta5
+            foreach ($request->pergunta5 as $resposta) {
+                $Pergunta5 = new Pergunta5Model();
+                $Pergunta5->quiz_id = $quiz_id;
+                $Pergunta5->resposta = $this->get_problema($resposta);
+                $Pergunta5->save();
+            }
+            //percorres os dados vindos do formulario, e registrar pergunta6
+            foreach ($request->pergunta6 as $resposta) {
+                $Pergunta6 = new Pergunta6Model();
+                $Pergunta6->quiz_id = $quiz_id;
+                $Pergunta6->resposta = $this->get_problema($resposta);
+                $Pergunta6->save();
+            }
+            //percorres os dados vindos do formulario, e registrar pergunta7
+            foreach ($request->pergunta7 as $resposta) {
+                $Pergunta7 = new Pergunta7Model();
+                $Pergunta7->quiz_id = $quiz_id;
+                $Pergunta7->resposta = $this->get_problema($resposta);
+                $Pergunta7->save();
+            }
+        } else {
+            dd('Error:Não foi possivel Registrar , tente novamente mais Tarde!');
         }
         return redirect('/success');
     }
@@ -126,8 +121,6 @@ class SesmtController extends Controller
     {
         return view('sesmt.success');
     }
-
-
     private function get_dia_semana($data)
     {
         switch ($data) {
