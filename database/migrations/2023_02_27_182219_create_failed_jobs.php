@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePergunta3 extends Migration
+class CreateFailedJobs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreatePergunta3 extends Migration
      */
     public function up()
     {
-        Schema::create('pergunta3', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('resposta');
+        Schema::create('failed_jobs', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreatePergunta3 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pergunta3');
+        Schema::dropIfExists('failed_jobs');
     }
 }

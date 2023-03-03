@@ -103,7 +103,7 @@ class SesmtController extends Controller
         } else {
             dd('Error:Não foi possivel Registrar , tente novamente mais Tarde!');
         }
-        return redirect('/success');
+        return redirect('sucesso');
     }
 
     /**
@@ -114,7 +114,6 @@ class SesmtController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     public function success()

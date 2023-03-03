@@ -1,0 +1,149 @@
+
+-=========================================================================================================================
+[  GIT ]
+-=========================================================================================================================
+
+# inicializar   :
+	$ git init
+	$ git branch -M 'main' 
+	$ git add .
+	$ git commit -m'Primeiro commit'
+
+#versionar   :
+	$git status
+	$ git log --oneline
+
+-========================================================================================================================= 
+[  LARAVEL ]
+-========================================================================================================================= 
+# Install   :
+	-> novo projeto  = composer create-project laravel/laravel sesmt  --prefer-dist
+
+# Configurar Laravel   : 
+--> Base de Dados  / editar arquivo .env:
+	->database = "sesmt"
+	-> host = 'root'
+	-> password = 'rooooot'
+	
+--> Bootstrap :
+--> JQuery :
+
+# Rotas  :
+/sesmt/form
+
+# Controllers   : 
+	-> php artisan make:controller  SesmtController --resource
+
+# Migration   :
+	php artisan make:migration create_quiz  --create=quiz
+	php artisan make:migration create_pergunta1  --create=pergunta1
+	php artisan make:migration create_pergunta2  --create=pergunta2
+	php artisan make:migration create_pergunta3  --create=pergunta3
+	php artisan make:migration create_pergunta4  --create=pergunta4
+	php artisan make:migration create_pergunta5  --create=pergunta5
+	php artisan make:migration create_pergunta6  --create=pergunta6
+	php artisan make:migration create_pergunta7  --create=pergunta7
+
+	php artisan make:migration add_quiz_to_pergunta1_models  --table=pergunta1_models
+	php artisan make:migration add_quiz_to_pergunta2_models  --table=pergunta2_models
+	php artisan make:migration add_quiz_to_pergunta3_models  --table=pergunta3_models
+	php artisan make:migration add_quiz_to_pergunta4_models  --table=pergunta4_models
+	php artisan make:migration add_quiz_to_pergunta5_models  --table=pergunta5_models
+	php artisan make:migration add_quiz_to_pergunta6_models   --table=pergunta6_models
+	php artisan make:migration add_quiz_to_pergunta7_models  --table=pergunta7_models
+
+	php artisan make:migrate
+
+# Models   :
+	php artisan make:model  QuizModel -m
+	php artisan make:model  Pergunta1Model -m 
+	php artisan make:model  Pergunta2Model  -m
+	 php artisan make:model  Pergunta3Model  -m
+	 php artisan make:model  Pergunta4Model  -m
+	 php artisan make:model  Pergunta5Model  -m
+	 php artisan make:model  Pergunta6Model  -m
+	 php artisan make:model  Pergunta7Model  -m
+# Views     :
+	-> layouts/app
+	-> sesmt/index
+	-> sesmt/form
+	-> sesmt/sucesso
+
+
+-========================================================================================================================= 
+[  MYSQL]
+-========================================================================================================================= 
+
+>> create database sesmt;
+>> create table  formulario_elaboral
+
+	
+	quis
+		id 
+		data_criada
+		email
+	pergunta1
+		id 
+		quiz_id 
+		resposta
+
+	pergunta2
+		id 
+		quiz_id 	
+		resposta
+
+	pergunta3
+		id 
+		quiz_id 
+		resposta
+
+	pergunta4
+		id 
+		quiz_id 
+		resposta
+
+	pergunta5
+		id 
+		quiz_id 
+		resposta
+
+	pergunta6
+		id 
+		quiz_id 
+		resposta
+
+	pergunta7
+		id 
+		quiz_id 
+		resposta
+
+
+
+/*
+
+		id 
+		pescoco
+		ombros
+		cotovelos
+		antebracos
+		punhosmaos_dedos
+		parte_superior_das_costas
+		parte_Inferior_das_costas
+		quadril_coxas
+		Joelhos
+		tornozelos_pes
+		cabeca
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+

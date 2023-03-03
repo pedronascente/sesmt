@@ -2,18 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SesmtController;
-/*
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-*/
+Route::resource('/quiz-laboral', SesmtController::class);
 
 
+Route::get('/sucesso', [SesmtController::class, 'success']);
 
-Route::resource('/', SesmtController::class);
+Auth::routes();
 
-
-Route::get('/success', [SesmtController::class, 'success']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');;

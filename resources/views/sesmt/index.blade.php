@@ -4,9 +4,9 @@
 
 <div class="row">
   <div class="col-md-6 offset-md-3">
-         <div class="card mb-4 text-center">
+  <div class="card mb-4 text-center">
     <div class="card-body">
-     <img src="{{ asset('img/logo.png') }}" class="img-fluid" />
+      <img  src="{{ asset('img/logo.png') }}" class="img-fluid" />
     </div>
   </div>
   
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <form action="{{route('store')}}" method="post">
+  <form action="{{route('quiz-laboral.store')}}" method="post">
   
   @csrf
   <div class="card mb-4 @error('pergunta1') border-error @enderror">
