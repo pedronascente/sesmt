@@ -1,6 +1,21 @@
+# Quiz Laboral
+Formulário QUIZ para verificar o grau de satisfação dos funcionários da empresa grupo volpato
 
-## Formulário de pesquisa de satisfação, 
-- empresa :volpato
-- Tendo como base o google Forms do Google
+# Tecnologias :  
+<div> 
+    <ul>
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>PHP</li>
+        <li>MYSQL</li>
+    </ul>
+ </div>
 
-Objetivo foi criar um formulario para verificar  a aceitação das atividades laborais , entre os funcionarios da empresa Grupo Volpato.
+# Frameworks :  
+<div> 
+    <ul>
+        <li>Bootstrap 4</li>
+        <li>Laravel 8</li>
+        <li>JQuery</li>
+    </ul>
+ </div>
