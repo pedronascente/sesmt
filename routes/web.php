@@ -11,4 +11,4 @@ Route::get('/sucesso', [SesmtController::class, 'success']);
 
 Auth::routes();
 
-Route::get('/dasboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
