@@ -23,7 +23,7 @@
         </p>
 
         <div class="c2gzEf">
-          <a href="{{route('quiz-laboral.index')}}">
+          <a href="{{route('index')}}">
               Enviar outra resposta
           </a>
         </div>

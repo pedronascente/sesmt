@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <form action="{{route('quiz-laboral.store')}}" method="post">
+  <form action="{{route('store')}}" method="post">
   
   @csrf
   <div class="card mb-4 @error('pergunta1') border-error @enderror">
