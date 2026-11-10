@@ -4,7 +4,7 @@
 
 <h1 align="center">QUIZ - Ginástica Laboral</h1>
 
-<p align="center">Este projeto é um sistema web, desenvolvido para empresa grupo volpato. com o objetivo de impementar um formulario de pesquisa de satisfação, senelhante com o Google Form</p>
+<p align="center">Este projeto é um sistema web, desenvolvido para empresa grupo volpato. com o objetivo de implementar um formulario de pesquisa de satisfação, senelhante com o Google Form</p>
 
 <p align="center">
  <a href="#features">Features</a> •
